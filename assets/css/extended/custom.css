@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #0d0d0d;
+  --gold: #c9a84c;
+  --text: #e8e4dc;
+  --text-muted: rgba(232,228,220,0.55);
+  --border: rgba(255,255,255,0.08);
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.main { max-width: 1100px !important; }
+
+/* NAV */
+.nav { border-bottom: 0.5px solid var(--border) !important; }
+.logo a, #menu a {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+.logo a {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 17px !important;
+  color: var(--text) !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+}
+#menu a:hover { color: var(--gold) !important; }
+
+/* HERO */
+.first-entry {
+  background: none !important;
+  border-bottom: 0.5px solid var(--border) !important;
+  padding: 70px 0 60px !important;
+}
+.first-entry .entry-header h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 52px !important;
+  line-height: 1.1 !important;
+  color: var(--text) !important;
+}
+.first-entry .entry-content {
+  font-size: 15px !important;
+  color: var(--text-muted) !important;
+}
+
+/* POSTS/CARDS */
+.post-entry {
+  background: rgba(255,255,255,0.03) !important;
+  border: 0.5px solid var(--border) !important;
+  border-radius: 10px !important;
+  transition: border-color 0.2s !important;
+}
+.post-entry:hover {
+  border-color: rgba(201,168,76,0.4) !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+.post-entry .entry-header h2 {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--text) !important;
+}
+.post-entry .entry-content { color: var(--text-muted) !important; }
+.post-entry .entry-footer { color: rgba(232,228,220,0.35) !important; }
+
+/* TAGS */
+.post-tags a {
+  background: rgba(201,168,76,0.1) !important;
+  border: 0.5px solid rgba(201,168,76,0.3) !important;
+  color: var(--gold) !important;
+  border-radius: 20px !important;
+}
+
+/* SINGLE PAGE */
+.post-title {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--text) !important;
+}
+.post-content { color: var(--text-muted) !important; line-height: 1.9 !important; }
+.post-content h2 {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--text) !important;
+}
+.post-content hr { border-color: var(--border) !important; }
+
+/* FOOTER */
+.footer {
+  border-top: 0.5px solid var(--border) !important;
+  color: rgba(232,228,220,0.25) !important;
+}
+.footer a { color: rgba(232,228,220,0.3) !important; }
+
+/* SECTION TITLES */
+.archive-year, .terms-tags .tag-entry a {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--text) !important;
+}
+
+/* BREADCRUMB & META */
+.breadcrumbs a, .post-meta { color: var(--text-muted) !important; }
+
+/* SEARCH */
+#searchbox input {
+  background: rgba(255,255,255,0.04) !important;
+  border: 0.5px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 8px !important;
+}
