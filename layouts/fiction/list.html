@@ -1,6 +1,6 @@
 {{ define "main" }}
 <style>
-.fiction-header{padding:40px 0 30px;border-bottom:0.5px solid rgba(255,255,255,0.08);margin-bottom:40px;display:flex;justify-content:space-between;align-items:baseline}
+.fiction-header{padding:40px 0 30px;border-bottom:0.5px solid rgba(255,255,255,0.08);margin-bottom:40px}
 .fiction-header h1{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc;margin:0}
 .fiction-header p{font-size:13px;color:rgba(232,228,220,0.4);margin:4px 0 0}
 .fiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
@@ -18,7 +18,7 @@
 .fiction-meta span{color:rgba(201,168,76,0.6);margin-right:12px}
 </style>
 <div class="fiction-header">
-  <div><h1>Fiction</h1><p>Nigerian literary &amp; young adult novels</p></div>
+  <div><h1>Fiction</h1><p>Nigerian literary and young adult novels</p></div>
 </div>
 <div class="fiction-grid">
   {{ range .Pages }}
