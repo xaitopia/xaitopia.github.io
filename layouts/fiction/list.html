@@ -1,0 +1,39 @@
+{{ define "main" }}
+<style>
+.fiction-header{padding:40px 0 30px;border-bottom:0.5px solid rgba(255,255,255,0.08);margin-bottom:40px;display:flex;justify-content:space-between;align-items:baseline}
+.fiction-header h1{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc;margin:0}
+.fiction-header p{font-size:13px;color:rgba(232,228,220,0.4);margin:4px 0 0}
+.fiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.fiction-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
+.fiction-card:hover{border-color:rgba(201,168,76,0.4)}
+.fiction-spine{height:8px}
+.fiction-card:nth-child(1) .fiction-spine{background:linear-gradient(90deg,#c9a84c,#a07830)}
+.fiction-card:nth-child(2) .fiction-spine{background:linear-gradient(90deg,#4a7c6f,#2d5a50)}
+.fiction-card:nth-child(3) .fiction-spine{background:linear-gradient(90deg,#7c4a6f,#5a2d50)}
+.fiction-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.fiction-genre{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#c9a84c;margin-bottom:12px}
+.fiction-title{font-family:'Playfair Display',serif;font-size:20px;line-height:1.3;color:#e8e4dc;margin-bottom:10px}
+.fiction-desc{font-size:13px;color:rgba(232,228,220,0.5);line-height:1.7;flex:1;margin-bottom:16px}
+.fiction-meta{font-size:11px;color:rgba(232,228,220,0.3);border-top:0.5px solid rgba(255,255,255,0.07);padding-top:12px}
+.fiction-meta span{color:rgba(201,168,76,0.6);margin-right:12px}
+</style>
+<div class="fiction-header">
+  <div><h1>Fiction</h1><p>Nigerian literary &amp; young adult novels</p></div>
+</div>
+<div class="fiction-grid">
+  {{ range .Pages }}
+  <a class="fiction-card" href="{{ .Permalink }}">
+    <div class="fiction-spine"></div>
+    <div class="fiction-body">
+      <div class="fiction-genre">{{ delimit .Params.tags " · " }}</div>
+      <div class="fiction-title">{{ .Title }}</div>
+      <div class="fiction-desc">{{ .Description }}</div>
+      <div class="fiction-meta">
+        {{ with .Params.setting }}<span>{{ . }}</span>{{ end }}
+        {{ with .Params.theme }}{{ . }}{{ end }}
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</div>
+{{ end }}

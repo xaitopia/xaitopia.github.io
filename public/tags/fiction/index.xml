@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Fiction on Emmanuel Chukwu</title>
+    <link>//localhost:1313/tags/fiction/</link>
+    <description>Recent content in Fiction on Emmanuel Chukwu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/fiction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Cloud Calf of Mambilla</title>
+      <link>//localhost:1313/fiction/the-cloud-calf-of-mambilla/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/fiction/the-cloud-calf-of-mambilla/</guid>
+      <description>Bello and his sister on the Mambilla Plateau.</description>
+    </item>
+    <item>
+      <title>The Borrowed Crown</title>
+      <link>//localhost:1313/fiction/the-borrowed-crown/</link>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/fiction/the-borrowed-crown/</guid>
+      <description>Amaka hides her humble background at an elite school.</description>
+    </item>
+    <item>
+      <title>The Thread of the Mountain</title>
+      <link>//localhost:1313/fiction/the-thread-of-the-mountain/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/fiction/the-thread-of-the-mountain/</guid>
+      <description>A young weaver leaves the sacred hills of Idanre to seek fortune in the city.</description>
+    </item>
+  </channel>
+</rss>

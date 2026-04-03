@@ -1,0 +1,32 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Emmanuel Chukwu"
+theme = "PaperMod"
+
+[params]
+  homeInfoParams = {Title = "Emmanuel Chukwu", Content = "Financial Writer · Novelist · Storyteller"}
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  defaultTheme = "dark"
+
+[menu]
+  [[menu.main]]
+    name = "Writing"
+    url = "/writing/"
+    weight = 1
+  [[menu.main]]
+    name = "Fiction"
+    url = "/fiction/"
+    weight = 2
+  [[menu.main]]
+    name = "Poetry"
+    url = "/poetry/"
+    weight = 3
+  [[menu.main]]
+    name = "Newsletter"
+    url = "/newsletter/"
+    weight = 4
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5
