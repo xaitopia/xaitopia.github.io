@@ -30,3 +30,6 @@ theme = "PaperMod"
     name = "About"
     url = "/about/"
     weight = 5
+
+[params.analytics]
+  enabled = false
