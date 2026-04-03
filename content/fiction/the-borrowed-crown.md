@@ -2,9 +2,9 @@
 title: "The Borrowed Crown"
 date: 2026-01-02
 draft: false
-tags: ["fiction", "young adult"]
-description: "Amaka hides her humble background at an elite school."
+tags: ["Young Adult", "Social Fiction"]
+setting: "Enugu, Nigeria"
+theme: "Class and identity"
+description: "Amaka hides her humble background at an elite school, walking a full mile from the gates so nobody hears her father's truck."
 ---
 Amaka hides her humble background at an elite school.
-
-*Set in Enugu, Nigeria.*
