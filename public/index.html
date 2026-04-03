@@ -114,6 +114,14 @@
 .section-title{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc}
 .section-sub{font-size:13px;color:rgba(232,228,220,0.4);margin-top:4px}
 .section-link{font-size:12px;color:#c9a84c;text-decoration:none}
+.writing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.writing-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;text-decoration:none;display:block;transition:border-color 0.2s}
+.writing-card:hover{border-color:rgba(201,168,76,0.4)}
+.writing-card.featured{grid-column:span 2}
+.writing-cat{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#c9a84c;margin-bottom:10px}
+.writing-title{font-family:'Playfair Display',serif;font-size:16px;line-height:1.4;color:#e8e4dc;margin-bottom:12px}
+.writing-card.featured .writing-title{font-size:20px}
+.writing-meta{font-size:11px;color:rgba(232,228,220,0.35)}
 .fiction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fiction-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
 .fiction-card:hover{border-color:rgba(201,168,76,0.4)}
@@ -168,10 +176,78 @@
 
 <div class="section">
   <div class="section-header">
+    <div><div class="section-title">Featured Writing</div><div class="section-sub">Finance · Essays · Poetry</div></div>
+    <a class="section-link" href="/writing/">View all →</a>
+  </div>
+  <div class="writing-grid">
+    <a class="writing-card featured" href="/writing/">
+      <div class="writing-cat">Finance</div>
+      <div class="writing-title">Why Nigerian Fintechs Are Rewriting the Rules of African Banking</div>
+      <div class="writing-meta">8 min read · Published in TechCabal</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Personal Finance</div>
+      <div class="writing-title">The Quiet Cost of Keeping Your Money in a Savings Account</div>
+      <div class="writing-meta">5 min read</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Poetry</div>
+      <div class="writing-title">Atlas of the Unnamed Streets</div>
+      <div class="writing-meta">3 min read</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Investing</div>
+      <div class="writing-title">Dollar-Cost Averaging Explained for the Reluctant Investor</div>
+      <div class="writing-meta">6 min read</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
     <div><div class="section-title">Fiction</div><div class="section-sub">Nigerian literary & young adult novels</div></div>
     <a class="section-link" href="/fiction/">View all →</a>
   </div>
   <div class="fiction-grid">
+    
+    <a class="fiction-card" href="//localhost:1313/fiction/the-cloud-calf-of-mambilla/">
+      <div class="fiction-spine"></div>
+      <div class="fiction-body">
+        <div class="fiction-genre">fiction · middle grade</div>
+        <div class="fiction-title">The Cloud Calf of Mambilla</div>
+        <div class="fiction-desc">Bello and his sister on the Mambilla Plateau.</div>
+        <div class="fiction-meta">
+          
+          
+        </div>
+      </div>
+    </a>
+    
+    <a class="fiction-card" href="//localhost:1313/fiction/the-borrowed-crown/">
+      <div class="fiction-spine"></div>
+      <div class="fiction-body">
+        <div class="fiction-genre">fiction · young adult</div>
+        <div class="fiction-title">The Borrowed Crown</div>
+        <div class="fiction-desc">Amaka hides her humble background at an elite school.</div>
+        <div class="fiction-meta">
+          
+          
+        </div>
+      </div>
+    </a>
+    
+    <a class="fiction-card" href="//localhost:1313/fiction/the-thread-of-the-mountain/">
+      <div class="fiction-spine"></div>
+      <div class="fiction-body">
+        <div class="fiction-genre">fiction · young adult</div>
+        <div class="fiction-title">The Thread of the Mountain</div>
+        <div class="fiction-desc">A young weaver leaves the sacred hills of Idanre to seek fortune in the city.</div>
+        <div class="fiction-meta">
+          
+          
+        </div>
+      </div>
+    </a>
     
   </div>
 </div>
