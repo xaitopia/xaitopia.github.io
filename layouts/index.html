@@ -1,100 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="dark">
-
-<head>
-	<meta name="generator" content="Hugo 0.152.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Emmanuel Chukwu</title>
-
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="//localhost:1313/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.2412a873728cc7fe930a3c94c6c252082ba7ce6c60ccc9dd655c0a468e089b96.css" integrity="sha256-JBKoc3KMx/6TCjyUxsJSCCunzmxgzMndZVwKRo4Im5Y=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="//localhost:1313/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="//localhost:1313/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script>
-</head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Emmanuel Chukwu (Alt + H)">Emmanuel Chukwu</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="//localhost:1313/writing/" title="Writing">
-                    <span>Writing</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/fiction/" title="Fiction">
-                    <span>Fiction</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/poetry/" title="Poetry">
-                    <span>Poetry</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/newsletter/" title="Newsletter">
-                    <span>Newsletter</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
+{{ define "main" }}
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
 *{box-sizing:border-box}
@@ -114,6 +18,14 @@
 .section-title{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc}
 .section-sub{font-size:13px;color:rgba(232,228,220,0.4);margin-top:4px}
 .section-link{font-size:12px;color:#c9a84c;text-decoration:none}
+.writing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.writing-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;text-decoration:none;display:block;transition:border-color 0.2s}
+.writing-card:hover{border-color:rgba(201,168,76,0.4)}
+.writing-card.featured{grid-column:span 2}
+.writing-cat{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#c9a84c;margin-bottom:10px}
+.writing-title{font-family:'Playfair Display',serif;font-size:16px;line-height:1.4;color:#e8e4dc;margin-bottom:12px}
+.writing-card.featured .writing-title{font-size:20px}
+.writing-meta{font-size:11px;color:rgba(232,228,220,0.35)}
 .fiction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fiction-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
 .fiction-card:hover{border-color:rgba(201,168,76,0.4)}
@@ -168,11 +80,53 @@
 
 <div class="section">
   <div class="section-header">
+    <div><div class="section-title">Featured Writing</div><div class="section-sub">Finance · Essays · Poetry</div></div>
+    <a class="section-link" href="/writing/">View all →</a>
+  </div>
+  <div class="writing-grid">
+    <a class="writing-card featured" href="/writing/">
+      <div class="writing-cat">Finance</div>
+      <div class="writing-title">Why Nigerian Fintechs Are Rewriting the Rules of African Banking</div>
+      <div class="writing-meta">8 min read · Published in TechCabal</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Personal Finance</div>
+      <div class="writing-title">The Quiet Cost of Keeping Your Money in a Savings Account</div>
+      <div class="writing-meta">5 min read</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Poetry</div>
+      <div class="writing-title">Atlas of the Unnamed Streets</div>
+      <div class="writing-meta">3 min read</div>
+    </a>
+    <a class="writing-card" href="/writing/">
+      <div class="writing-cat">Investing</div>
+      <div class="writing-title">Dollar-Cost Averaging Explained for the Reluctant Investor</div>
+      <div class="writing-meta">6 min read</div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
     <div><div class="section-title">Fiction</div><div class="section-sub">Nigerian literary & young adult novels</div></div>
     <a class="section-link" href="/fiction/">View all →</a>
   </div>
   <div class="fiction-grid">
-    
+    {{ range first 3 (where .Site.RegularPages "Section" "fiction") }}
+    <a class="fiction-card" href="{{ .Permalink }}">
+      <div class="fiction-spine"></div>
+      <div class="fiction-body">
+        <div class="fiction-genre">{{ delimit .Params.tags " · " }}</div>
+        <div class="fiction-title">{{ .Title }}</div>
+        <div class="fiction-desc">{{ .Description }}</div>
+        <div class="fiction-meta">
+          {{ with .Params.setting }}<span>{{ . }}</span>{{ end }}
+          {{ with .Params.theme }}{{ . }}{{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
   </div>
 </div>
 
@@ -218,84 +172,4 @@
     </div>
   </div>
 </div>
-
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Emmanuel Chukwu</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
+{{ end }}
