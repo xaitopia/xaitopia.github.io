@@ -1,5 +1,6 @@
 baseURL = "/"
-languageCode = "en-us"
+defaultContentLanguage = "en"
+languageCode = "en"
 title = "Emmanuel Chukwu"
 theme = "PaperMod"
 
