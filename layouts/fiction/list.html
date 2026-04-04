@@ -25,7 +25,7 @@
   <a class="fiction-card" href="{{ .Permalink }}">
     <div class="fiction-spine"></div>
     <div class="fiction-body">
-      <div class="fiction-genre">{{ delimit .Params.tags " · " }}</div>
+      <div class="fiction-genre">{{ with .Params.tags }}{{ delimit . " · " }}{{ end }}</div>
       <div class="fiction-title">{{ .Title }}</div>
       <div class="fiction-desc">{{ .Description }}</div>
       <div class="fiction-meta">
