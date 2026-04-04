@@ -1,0 +1,13 @@
+{{ define "main" }}
+<style>
+.fiction-single{max-width:680px;margin:0 auto;padding:60px 0}
+.fiction-single h1{font-family:'Playfair Display',serif;font-size:36px;color:#e8e4dc;margin-bottom:16px}
+.fiction-single .meta{font-size:13px;color:rgba(232,228,220,0.4);margin-bottom:40px}
+.fiction-single .content{font-size:16px;color:rgba(232,228,220,0.7);line-height:1.9}
+</style>
+<div class="fiction-single">
+  <h1>{{ .Title }}</h1>
+  <div class="meta">{{ .Params.setting }} &middot; {{ .Params.storyline }}</div>
+  <div class="content">{{ .Content }}</div>
+</div>
+{{ end }}
