@@ -1,4 +1,4 @@
 ---
 title: "Writing"
-description: "Essays, articles, and reported pieces"
+description: "Financial articles, essays, and reported pieces by Emmanuel Chukwu — covering African fintech, personal finance, and investment culture."
 ---
