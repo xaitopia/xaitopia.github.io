@@ -2,7 +2,8 @@ baseURL = "https://xaitopia.github.io/"
 languageCode = "en-us"
 title = "Emmanuel Chukwu"
 theme = "PaperMod"
-paginate = 20
+[pagination]
+  pagerSize = 20
 
 [params]
   author = "Emmanuel Chukwu"
