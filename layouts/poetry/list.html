@@ -5,15 +5,15 @@
 .poetry-header p{font-size:13px;color:rgba(232,228,220,0.4);margin:4px 0 0}
 .poetry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .poetry-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
-.poetry-card:hover{border-color:rgba(180,120,201,0.4)}
+.poetry-card:hover{border-color:rgba(155,106,191,0.4)}
 .poetry-spine{height:8px}
 .poetry-card:nth-child(5n+1) .poetry-spine{background:linear-gradient(90deg,#9b6abf,#7a3da0)}
 .poetry-card:nth-child(5n+2) .poetry-spine{background:linear-gradient(90deg,#bf6a8c,#a03d5a)}
 .poetry-card:nth-child(5n+3) .poetry-spine{background:linear-gradient(90deg,#6a7cbf,#3d4fa0)}
 .poetry-card:nth-child(5n+4) .poetry-spine{background:linear-gradient(90deg,#bf9b6a,#a07a3d)}
-.poetry-card:nth-child(5n+5) .poetry-spine{background:linear-gradient(90deg,#6abfb0,#3da090)}
+.poetry-card:nth-child(5n) .poetry-spine{background:linear-gradient(90deg,#6abfb0,#3da090)}
 .poetry-body{padding:22px;flex:1;display:flex;flex-direction:column}
-.poetry-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#9b6abf;margin-bottom:12px}
+.poetry-genre{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#9b6abf;margin-bottom:12px}
 .poetry-title{font-family:'Playfair Display',serif;font-size:20px;line-height:1.3;color:#e8e4dc;margin-bottom:10px}
 .poetry-desc{font-size:13px;color:rgba(232,228,220,0.5);line-height:1.7;flex:1;margin-bottom:16px;font-style:italic}
 .poetry-meta{font-size:11px;color:rgba(232,228,220,0.3);border-top:0.5px solid rgba(255,255,255,0.07);padding-top:12px}
@@ -27,12 +27,11 @@
   <a class="poetry-card" href="{{ .Permalink }}">
     <div class="poetry-spine"></div>
     <div class="poetry-body">
-      <div class="poetry-tag">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Poem{{ end }}</div>
+      <div class="poetry-genre">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Poem{{ end }}</div>
       <div class="poetry-title">{{ .Title }}</div>
       <div class="poetry-desc">{{ .Description }}</div>
       <div class="poetry-meta">
-        <span>{{ .Date.Format "2006" }}</span>
-        {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+        <span>{{ .Date.Format "2006" }}</span>{{ with .Params.author }}<span>{{ . }}</span>{{ end }}
       </div>
     </div>
   </a>

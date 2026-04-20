@@ -5,32 +5,31 @@
 .writing-header p{font-size:13px;color:rgba(232,228,220,0.4);margin:4px 0 0}
 .writing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .writing-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
-.writing-card:hover{border-color:rgba(76,140,201,0.4)}
+.writing-card:hover{border-color:rgba(74,140,201,0.4)}
 .writing-spine{height:8px}
 .writing-card:nth-child(3n+1) .writing-spine{background:linear-gradient(90deg,#4a8cc9,#2d5fa0)}
 .writing-card:nth-child(3n+2) .writing-spine{background:linear-gradient(90deg,#4a9c7c,#2d7a5a)}
-.writing-card:nth-child(3n+3) .writing-spine{background:linear-gradient(90deg,#7c6a4a,#5a4a2d)}
+.writing-card:nth-child(3n) .writing-spine{background:linear-gradient(90deg,#9c7c4a,#7a5a2d)}
 .writing-body{padding:22px;flex:1;display:flex;flex-direction:column}
-.writing-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#4a8cc9;margin-bottom:12px}
+.writing-genre{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#4a8cc9;margin-bottom:12px}
 .writing-title{font-family:'Playfair Display',serif;font-size:20px;line-height:1.3;color:#e8e4dc;margin-bottom:10px}
 .writing-desc{font-size:13px;color:rgba(232,228,220,0.5);line-height:1.7;flex:1;margin-bottom:16px}
 .writing-meta{font-size:11px;color:rgba(232,228,220,0.3);border-top:0.5px solid rgba(255,255,255,0.07);padding-top:12px}
-.writing-meta span{color:rgba(76,140,201,0.6);margin-right:12px}
+.writing-meta span{color:rgba(74,140,201,0.6);margin-right:12px}
 </style>
 <div class="writing-header">
-  <div><h1>Writing</h1><p>Essays, analysis, and longform articles</p></div>
+  <div><h1>Writing</h1><p>Essays, articles, and reported pieces</p></div>
 </div>
 <div class="writing-grid">
   {{ range .Pages }}
   <a class="writing-card" href="{{ .Permalink }}">
     <div class="writing-spine"></div>
     <div class="writing-body">
-      <div class="writing-tag">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Essay{{ end }}</div>
+      <div class="writing-genre">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Essay{{ end }}</div>
       <div class="writing-title">{{ .Title }}</div>
       <div class="writing-desc">{{ .Description }}</div>
       <div class="writing-meta">
-        <span>{{ .Date.Format "Jan 2006" }}</span>
-        {{ if .ReadingTime }}<span>{{ .ReadingTime }} min read</span>{{ end }}
+        <span>{{ .Date.Format "Jan 2006" }}</span>{{ if .ReadingTime }}<span>{{ .ReadingTime }} min read</span>{{ end }}
       </div>
     </div>
   </a>
