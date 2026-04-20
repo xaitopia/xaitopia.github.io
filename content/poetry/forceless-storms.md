@@ -16,8 +16,14 @@ The vertical stance now a job of stress.
 
 Allow the horizon become parallel with us.
 
-The sun would still one day take its true form.
+The sun would still one day take it's true form.
 
 Until the sky takes the color of peace,
 
 And the light retires the darkness to sleep.
+
+We would move to the danceless music.
+
+Up and down we'll go.
+
+While letting go the music becomes beautiful.

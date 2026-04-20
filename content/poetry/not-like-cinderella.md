@@ -21,3 +21,5 @@ But, alone was she with walls so high.
 A fake smile decorated her succulent lips.
 
 With pride from baseless energy supplies.
+
+She wished love would fill her to the tip.

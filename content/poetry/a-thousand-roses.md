@@ -21,3 +21,5 @@ A goddess among peers,
 With a thousand rose for a scent,
 
 And harmonious sounds for laughter.
+
+I know of a woman.

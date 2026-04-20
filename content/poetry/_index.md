@@ -1,4 +1,4 @@
 ---
 title: "Poetry"
-description: "Verses written 2021–2023 — signed Xai"
+description: "Poems by Emmanuel Chukwu — rooted in Nigerian landscape, memory, and the small ceremonies of daily life."
 ---

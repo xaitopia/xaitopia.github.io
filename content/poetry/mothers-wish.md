@@ -20,4 +20,22 @@ But Greed is a spirit so strong,
 
 And thirst for more leaves us in thorns.
 
-Her children sell themselves out.
+Her children sell themselves out,
+
+For pennies without worth.
+
+Though hope still flows through her veins,
+
+And she knows this struggle won't be in vain.
+
+For as the sun rises from the East,
+
+Her children would still be hers.
+
+Millions of bullets fired,
+
+Thousands of souls tired,
+
+Still, mother continues to hope
+
+Her children would be one.
