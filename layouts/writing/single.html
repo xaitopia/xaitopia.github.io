@@ -31,7 +31,7 @@
     "linear-gradient(90deg,#4a9c7c,#2d7a5a)"
     "linear-gradient(90deg,#9c7c4a,#7a5a2d)"
   }}
-  {{ $idx := mod .File.UniqueID 3 }}
+  {{ $idx := mod .WordCount 3 }}
   <div class="writing-single-spine" style="background:{{ index $colors $idx }}"></div>
 
   <div class="writing-single-tag">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Essay{{ end }}</div>

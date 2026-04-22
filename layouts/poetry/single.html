@@ -28,7 +28,7 @@
     "linear-gradient(90deg,#bf9b6a,#a07a3d)"
     "linear-gradient(90deg,#6abfb0,#3da090)"
   }}
-  {{ $idx := mod .File.UniqueID 5 }}
+  {{ $idx := mod .WordCount 5 }}
   <div class="poetry-single-spine" style="background:{{ index $colors $idx }}"></div>
 
   <div class="poetry-single-tag">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Poem{{ end }}</div>
