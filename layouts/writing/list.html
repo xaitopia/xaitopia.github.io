@@ -16,16 +16,24 @@
 .writing-desc{font-size:13px;color:rgba(232,228,220,0.5);line-height:1.7;flex:1;margin-bottom:16px}
 .writing-meta{font-size:11px;color:rgba(232,228,220,0.3);border-top:0.5px solid rgba(255,255,255,0.07);padding-top:12px}
 .writing-meta span{color:rgba(74,140,201,0.6);margin-right:12px}
+.writing-cta{margin-top:60px;background:rgba(74,140,201,0.05);border:0.5px solid rgba(74,140,201,0.15);border-radius:12px;padding:36px}
+.writing-cta-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(74,140,201,0.6);margin-bottom:12px}
+.writing-cta h2{font-family:'Playfair Display',serif;font-size:24px;color:#e8e4dc;font-weight:400;margin-bottom:10px}
+.writing-cta p{font-size:14px;color:rgba(232,228,220,0.5);line-height:1.7;margin-bottom:24px;max-width:520px}
+.writing-cta-services{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.writing-cta-pill{font-size:11px;padding:6px 14px;border:0.5px solid rgba(74,140,201,0.25);border-radius:4px;color:rgba(74,140,201,0.7);letter-spacing:0.05em}
+.writing-cta-btn{display:inline-block;padding:11px 28px;background:rgba(74,140,201,0.12);border:0.5px solid rgba(74,140,201,0.4);border-radius:7px;color:#4a8cc9;font-size:13px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s}
+.writing-cta-btn:hover{background:rgba(74,140,201,0.2);border-color:rgba(74,140,201,0.7)}
 </style>
 <div class="writing-header">
-  <div><h1>Writing</h1><p>Essays, articles, and reported pieces</p></div>
+  <div><h1>Financial Writing</h1><p>Market analysis, technical finance, and institutional-grade editorial content</p></div>
 </div>
 <div class="writing-grid">
   {{ range .Pages }}
   <a class="writing-card" href="{{ .Permalink }}">
     <div class="writing-spine"></div>
     <div class="writing-body">
-      <div class="writing-genre">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Essay{{ end }}</div>
+      <div class="writing-genre">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Finance{{ end }}</div>
       <div class="writing-title">{{ .Title }}</div>
       <div class="writing-desc">{{ .Description }}</div>
       <div class="writing-meta">
@@ -34,5 +42,18 @@
     </div>
   </a>
   {{ end }}
+</div>
+<div class="writing-cta">
+  <div class="writing-cta-label">Available for new engagements</div>
+  <h2>Institutional-grade financial content, built to your brief.</h2>
+  <p>From white papers to market intelligence reports and editorial strategy — content that speaks the language of professional and institutional audiences.</p>
+  <div class="writing-cta-services">
+    <span class="writing-cta-pill">White Papers</span>
+    <span class="writing-cta-pill">Market Intelligence Reports</span>
+    <span class="writing-cta-pill">Editorial Strategy</span>
+    <span class="writing-cta-pill">Technical Finance Writing</span>
+    <span class="writing-cta-pill">Sector Analysis</span>
+  </div>
+  <a class="writing-cta-btn" href="mailto:xaitopia@gmail.com">Discuss a project →</a>
 </div>
 {{ end }}

@@ -1,33 +1,33 @@
 {{ define "main" }}
 <style>
 .about-wrap{max-width:720px;margin:0 auto;padding:40px 0 80px}
-.about-spine{height:4px;width:60px;border-radius:2px;background:linear-gradient(90deg,#c9a84c,#a07830);margin-bottom:32px}
-.about-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:#c9a84c;margin-bottom:14px}
-.about-hero{display:grid;grid-template-columns:1fr 160px;gap:48px;align-items:start;margin-bottom:52px}
-.about-name{font-family:'Playfair Display',serif;font-size:38px;line-height:1.2;color:#e8e4dc;font-weight:400;margin-bottom:14px}
-.about-role{font-size:15px;color:rgba(232,228,220,0.45);margin-bottom:24px;font-style:italic}
+.about-spine{height:4px;width:60px;border-radius:2px;background:linear-gradient(90deg,#4a8cc9,#2d5fa0);margin-bottom:32px}
+.about-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:#4a8cc9;margin-bottom:14px}
+.about-hero{display:grid;grid-template-columns:1fr 160px;gap:48px;align-items:start;margin-bottom:48px}
+.about-name{font-family:'Playfair Display',serif;font-size:38px;line-height:1.2;color:#e8e4dc;font-weight:400;margin-bottom:10px}
+.about-role{font-size:14px;color:#4a8cc9;margin-bottom:6px;letter-spacing:0.04em;text-transform:uppercase;font-size:11px}
 .about-intro{font-size:17px;line-height:1.85;color:rgba(232,228,220,0.72)}
-.photo-frame{width:160px;height:200px;background:rgba(201,168,76,0.06);border:0.5px solid rgba(201,168,76,0.18);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.photo-initials{width:60px;height:60px;border-radius:50%;background:rgba(201,168,76,0.12);border:0.5px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:#c9a84c}
-.photo-label{font-size:10px;color:rgba(232,228,220,0.2);letter-spacing:0.06em;text-align:center}
-.divider{height:0.5px;background:rgba(255,255,255,0.07);margin:40px 0}
-.section-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(232,228,220,0.3);margin-bottom:20px}
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 8px}
-.work-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;text-decoration:none;display:block;transition:border-color 0.2s}
-.work-card:hover{border-color:rgba(255,255,255,0.14)}
-.wc-spine{height:4px}
-.wc-body{padding:14px 16px}
-.wc-cat{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:7px}
-.wc-title{font-size:13px;color:rgba(232,228,220,0.7);line-height:1.5}
-.about-body{font-size:16px;line-height:1.85;color:rgba(232,228,220,0.62);margin-bottom:18px}
-.contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.contact-pill{font-size:12px;padding:8px 16px;border:0.5px solid rgba(201,168,76,0.22);border-radius:5px;color:rgba(201,168,76,0.65);letter-spacing:0.04em;text-decoration:none;transition:border-color 0.2s}
-.contact-pill:hover{border-color:rgba(201,168,76,0.45)}
-@media(max-width:600px){
-  .about-hero{grid-template-columns:1fr}
-  .photo-frame{display:none}
-  .work-grid{grid-template-columns:1fr}
-}
+.photo-frame{width:160px;height:200px;background:rgba(74,140,201,0.06);border:0.5px solid rgba(74,140,201,0.18);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.photo-initials{width:60px;height:60px;border-radius:50%;background:rgba(74,140,201,0.12);border:0.5px solid rgba(74,140,201,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:#4a8cc9}
+.photo-label{font-size:10px;color:rgba(232,228,220,0.2);letter-spacing:0.06em;text-align:center;padding:0 10px}
+.divider{height:0.5px;background:rgba(255,255,255,0.07);margin:36px 0}
+.section-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(232,228,220,0.3);margin-bottom:18px}
+.about-body{font-size:16px;line-height:1.85;color:rgba(232,228,220,0.65);margin-bottom:18px}
+.expertise-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 8px}
+.expertise-item{padding:16px 18px;background:rgba(255,255,255,0.02);border:0.5px solid rgba(255,255,255,0.07);border-radius:8px}
+.expertise-title{font-size:13px;color:#e8e4dc;margin-bottom:4px;font-weight:500}
+.expertise-desc{font-size:12px;color:rgba(232,228,220,0.4);line-height:1.5}
+.creative-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.creative-card{background:rgba(255,255,255,0.02);border:0.5px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;text-decoration:none;transition:border-color 0.2s}
+.creative-card:hover{border-color:rgba(255,255,255,0.12)}
+.cc-spine{height:3px}
+.cc-body{padding:12px 14px}
+.cc-cat{font-size:9px;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:5px}
+.cc-title{font-size:12px;color:rgba(232,228,220,0.6);line-height:1.4}
+.contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.contact-pill{font-size:12px;padding:8px 16px;border:0.5px solid rgba(74,140,201,0.22);border-radius:5px;color:rgba(74,140,201,0.65);letter-spacing:0.04em;text-decoration:none;transition:border-color 0.2s}
+.contact-pill:hover{border-color:rgba(74,140,201,0.45)}
+@media(max-width:600px){.about-hero{grid-template-columns:1fr}.photo-frame{display:none}.expertise-grid{grid-template-columns:1fr}.creative-row{grid-template-columns:1fr}}
 </style>
 
 <div class="about-wrap">
@@ -37,8 +37,9 @@
   <div class="about-hero">
     <div>
       <h1 class="about-name">Emmanuel Chukwu</h1>
-      <p class="about-role">A storyteller working across fiction, poetry, and nonfiction.</p>
-      <p class="about-intro">Writing under the name Xai, I make work about the moments that hold a life together — grief that transforms into stars, love that bends like galaxies, the silence between two people that says everything. My fiction, poetry, and essays are rooted in place and memory, shaped by the belief that the most universal stories are always the most specific ones.</p>
+      <div class="about-role">Financial Writer & Technical Content Strategist</div>
+      <br>
+      <p class="about-intro">I produce institutional-grade editorial content for financial firms, research platforms, and fintech brands — translating complex market mechanics, data structures, and investment frameworks into authoritative written work that professional and institutional audiences trust.</p>
     </div>
     <div class="photo-frame">
       <div class="photo-initials">EC</div>
@@ -47,37 +48,64 @@
   </div>
 
   <div class="divider"></div>
-  <div class="section-label">The work</div>
-  <div class="work-grid">
-    <a class="work-card" href="/fiction/">
-      <div class="wc-spine" style="background:linear-gradient(90deg,#c9a84c,#a07830)"></div>
-      <div class="wc-body">
-        <div class="wc-cat" style="color:#c9a84c">Fiction</div>
-        <div class="wc-title">Novels rooted in landscape, identity, and the cost of belonging</div>
-      </div>
-    </a>
-    <a class="work-card" href="/poetry/">
-      <div class="wc-spine" style="background:linear-gradient(90deg,#9b6abf,#7a3da0)"></div>
-      <div class="wc-body">
-        <div class="wc-cat" style="color:#9b6abf">Poetry</div>
-        <div class="wc-title">Verses on memory, grief, transformation, and the small ceremonies of daily life</div>
-      </div>
-    </a>
-    <a class="work-card" href="/writing/">
-      <div class="wc-spine" style="background:linear-gradient(90deg,#4a8cc9,#2d5fa0)"></div>
-      <div class="wc-body">
-        <div class="wc-cat" style="color:#4a8cc9">Essays</div>
-        <div class="wc-title">Longform writing on finance, culture, and how systems shape ordinary lives</div>
-      </div>
-    </a>
+  <div class="section-label">Areas of expertise</div>
+  <p class="about-body">My work sits at the intersection of financial literacy, market mechanics, and editorial precision. I write for audiences who know the difference between a white paper and a blog post — and expect the former.</p>
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <div class="expertise-title">Market Analysis & Research</div>
+      <div class="expertise-desc">Macro and sector-level analysis, earnings commentary, and data-driven market intelligence.</div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-title">Technical Finance Writing</div>
+      <div class="expertise-desc">Translating quantitative frameworks, indicators, and algorithmic logic into clear editorial content.</div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-title">Emerging Markets</div>
+      <div class="expertise-desc">Deep familiarity with African fintech infrastructure, currency dynamics, and frontier market behaviour.</div>
+    </div>
+    <div class="expertise-item">
+      <div class="expertise-title">Editorial Strategy</div>
+      <div class="expertise-desc">Content architecture, publishing frameworks, and audience-specific tone for financial media platforms.</div>
+    </div>
   </div>
 
   <div class="divider"></div>
+  <div class="section-label">Services</div>
+  <p class="about-body">Available for white papers, market intelligence reports, technical finance briefs, editorial strategy engagements, and longform financial journalism. I work with managing editors, content leads, and communications teams at financial institutions, research firms, and fintech companies.</p>
+
+  <div class="divider"></div>
   <div class="section-label">Get in touch</div>
-  <p class="about-body">For enquiries, collaborations, or just to say something — reach out directly.</p>
+  <p class="about-body">For project enquiries and editorial engagements — reach out directly.</p>
   <div class="contact-row">
     <a class="contact-pill" href="mailto:xaitopia@gmail.com">xaitopia@gmail.com</a>
     <a class="contact-pill" href="https://mindcrafteduniverse.substack.com" target="_blank">Newsletter</a>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Creative work</div>
+  <p class="about-body" style="font-size:14px">Outside financial writing, I work in fiction, poetry, and longform essays under the name Xai.</p>
+  <div class="creative-row">
+    <a class="creative-card" href="/fiction/">
+      <div class="cc-spine" style="background:linear-gradient(90deg,#c9a84c,#a07830)"></div>
+      <div class="cc-body">
+        <div class="cc-cat" style="color:#c9a84c">Fiction</div>
+        <div class="cc-title">Novels rooted in landscape and identity</div>
+      </div>
+    </a>
+    <a class="creative-card" href="/poetry/">
+      <div class="cc-spine" style="background:linear-gradient(90deg,#9b6abf,#7a3da0)"></div>
+      <div class="cc-body">
+        <div class="cc-cat" style="color:#9b6abf">Poetry</div>
+        <div class="cc-title">Verses on memory, grief, and daily life</div>
+      </div>
+    </a>
+    <a class="creative-card" href="/newsletter/">
+      <div class="cc-spine" style="background:linear-gradient(90deg,#4a9c7c,#2d7a5a)"></div>
+      <div class="cc-body">
+        <div class="cc-cat" style="color:#4a9c7c">Newsletter</div>
+        <div class="cc-title">Mind Craft Universe on Substack</div>
+      </div>
+    </a>
   </div>
 </div>
 {{ end }}

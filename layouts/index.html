@@ -1,175 +1,87 @@
 {{ define "main" }}
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
-*{box-sizing:border-box}
-.hero{padding:70px 0 60px;border-bottom:0.5px solid rgba(255,255,255,0.08);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.hero-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:18px}
-.hero-name{font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;color:#e8e4dc;margin-bottom:20px}
-.hero-sub{font-size:15px;color:rgba(232,228,220,0.55);line-height:1.8}
-.hero-stats{display:flex;gap:32px;margin-top:36px}
-.stat-num{font-family:'Playfair Display',serif;font-size:28px;color:#c9a84c}
-.stat-label{font-size:11px;color:rgba(232,228,220,0.4);letter-spacing:0.06em;text-transform:uppercase;margin-top:2px}
-.hero-right{display:flex;flex-direction:column;gap:12px}
-.pill{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:14px 18px}
-.pill-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#c9a84c;margin-bottom:4px}
-.pill-text{font-size:14px;color:rgba(232,228,220,0.8)}
-.section{padding:50px 0;border-bottom:0.5px solid rgba(255,255,255,0.08)}
-.section-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
-.section-title{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc}
-.section-sub{font-size:13px;color:rgba(232,228,220,0.4);margin-top:4px}
-.section-link{font-size:12px;color:#c9a84c;text-decoration:none}
-.writing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.writing-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;text-decoration:none;display:block;transition:border-color 0.2s}
-.writing-card:hover{border-color:rgba(201,168,76,0.4)}
-.writing-card.featured{grid-column:span 2}
-.writing-cat{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#c9a84c;margin-bottom:10px}
-.writing-title{font-family:'Playfair Display',serif;font-size:16px;line-height:1.4;color:#e8e4dc;margin-bottom:12px}
-.writing-card.featured .writing-title{font-size:20px}
-.writing-meta{font-size:11px;color:rgba(232,228,220,0.35)}
-.fiction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.fiction-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color 0.2s}
-.fiction-card:hover{border-color:rgba(201,168,76,0.4)}
-.fiction-spine{height:8px}
-.fiction-card:nth-child(1) .fiction-spine{background:linear-gradient(90deg,#c9a84c,#a07830)}
-.fiction-card:nth-child(2) .fiction-spine{background:linear-gradient(90deg,#4a7c6f,#2d5a50)}
-.fiction-card:nth-child(3) .fiction-spine{background:linear-gradient(90deg,#7c4a6f,#5a2d50)}
-.fiction-body{padding:22px;flex:1;display:flex;flex-direction:column}
-.fiction-genre{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#c9a84c;margin-bottom:12px}
-.fiction-title{font-family:'Playfair Display',serif;font-size:18px;line-height:1.3;color:#e8e4dc;margin-bottom:10px}
-.fiction-desc{font-size:13px;color:rgba(232,228,220,0.5);line-height:1.7;flex:1;margin-bottom:16px}
-.fiction-meta{font-size:11px;color:rgba(232,228,220,0.3);border-top:0.5px solid rgba(255,255,255,0.07);padding-top:12px}
-.fiction-meta span{color:rgba(201,168,76,0.6);margin-right:12px}
-.newsletter{background:rgba(201,168,76,0.06);border:0.5px solid rgba(201,168,76,0.2);border-radius:14px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.nl-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#c9a84c;margin-bottom:14px}
-.nl-title{font-family:'Playfair Display',serif;font-size:26px;color:#e8e4dc;line-height:1.25;margin-bottom:6px}
-.nl-domain{font-size:12px;color:rgba(201,168,76,0.6);margin-bottom:16px}
-.nl-sub{font-size:14px;color:rgba(232,228,220,0.5);line-height:1.8;margin-bottom:24px}
-.nl-btn{display:inline-block;background:#c9a84c;color:#0d0d0d;font-size:13px;font-weight:500;padding:12px 24px;border-radius:24px;text-decoration:none}
-.nl-right{display:flex;flex-direction:column;gap:12px}
-.nl-stat{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border-radius:8px;padding:14px 16px}
-.nl-stat-num{font-family:'Playfair Display',serif;font-size:20px;color:#c9a84c;min-width:60px}
-.nl-stat-label{font-size:13px;color:rgba(232,228,220,0.55)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.about-text{font-size:15px;color:rgba(232,228,220,0.65);line-height:1.9}
-.about-text p{margin-bottom:16px}
-.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.skill-tag{font-size:11px;background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.3);color:#c9a84c;padding:5px 12px;border-radius:20px}
-.contact-box{background:rgba(201,168,76,0.07);border:0.5px solid rgba(201,168,76,0.25);border-radius:12px;padding:28px}
-.contact-title{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px;color:#e8e4dc}
-.contact-sub{font-size:13px;color:rgba(232,228,220,0.5);margin-bottom:20px;line-height:1.7}
-.contact-btn{display:inline-block;background:#c9a84c;color:#0d0d0d;font-size:13px;font-weight:500;padding:11px 24px;border-radius:24px;text-decoration:none}
+.home-wrap{max-width:860px;margin:0 auto;padding:60px 0 80px}
+.home-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:#4a8cc9;margin-bottom:20px}
+.home-headline{font-family:'Playfair Display',serif;font-size:48px;line-height:1.15;color:#e8e4dc;font-weight:400;margin-bottom:20px;max-width:680px}
+.home-headline span{color:#4a8cc9}
+.home-sub{font-size:17px;color:rgba(232,228,220,0.55);line-height:1.75;max-width:560px;margin-bottom:40px}
+.home-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:80px}
+.home-cta-primary{padding:12px 28px;background:rgba(74,140,201,0.12);border:0.5px solid rgba(74,140,201,0.4);border-radius:7px;color:#4a8cc9;font-size:13px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s}
+.home-cta-primary:hover{background:rgba(74,140,201,0.2);border-color:rgba(74,140,201,0.7)}
+.home-cta-secondary{padding:12px 28px;background:transparent;border:0.5px solid rgba(255,255,255,0.1);border-radius:7px;color:rgba(232,228,220,0.5);font-size:13px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s}
+.home-cta-secondary:hover{border-color:rgba(255,255,255,0.25);color:rgba(232,228,220,0.8)}
+.home-divider{height:0.5px;background:rgba(255,255,255,0.07);margin-bottom:56px}
+.home-section-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(232,228,220,0.3);margin-bottom:24px}
+.home-work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:64px}
+.home-card{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:border-color 0.2s}
+.home-card:hover{border-color:rgba(255,255,255,0.15)}
+.home-card-spine{height:4px}
+.home-card-body{padding:20px 22px}
+.home-card-cat{font-size:9px;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:8px}
+.home-card-title{font-family:'Playfair Display',serif;font-size:16px;color:#e8e4dc;margin-bottom:8px;line-height:1.4;font-weight:400}
+.home-card-desc{font-size:12px;color:rgba(232,228,220,0.4);line-height:1.6}
+.home-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:64px}
+.home-service{padding:20px;border:0.5px solid rgba(255,255,255,0.07);border-radius:10px}
+.home-service-title{font-size:13px;color:#e8e4dc;margin-bottom:6px;font-weight:500}
+.home-service-desc{font-size:12px;color:rgba(232,228,220,0.4);line-height:1.6}
+.home-contact{background:rgba(74,140,201,0.05);border:0.5px solid rgba(74,140,201,0.15);border-radius:12px;padding:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.home-contact-text h3{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc;font-weight:400;margin-bottom:6px}
+.home-contact-text p{font-size:13px;color:rgba(232,228,220,0.45);line-height:1.6}
+@media(max-width:600px){.home-headline{font-size:32px}.home-contact{flex-direction:column}}
 </style>
 
-<div class="hero">
-  <div>
-    <div class="hero-tag">Financial Writer - Novelist - Storyteller</div>
-    <div class="hero-name">Words that<br>move markets.</div>
-    <div class="hero-sub">I write clear, compelling financial content for fintechs and investment platforms and literary fiction rooted in the Nigerian landscape.</div>
-    <div class="hero-stats">
-      <div><div class="stat-num">40+</div><div class="stat-label">Articles</div></div>
-      <div><div class="stat-num">3</div><div class="stat-label">Novels</div></div>
-      <div><div class="stat-num">2</div><div class="stat-label">Niches</div></div>
+<div class="home-wrap">
+  <div class="home-eyebrow">Financial Writer & Technical Content Strategist</div>
+  <h1 class="home-headline">Words that move <span>markets.</span></h1>
+  <p class="home-sub">Bridging the gap between technical market data and institutional-grade editorial content. White papers, market intelligence reports, and editorial strategy for financial firms, research houses, and fintech brands.</p>
+  <div class="home-cta-row">
+    <a class="home-cta-primary" href="/writing/">View Financial Writing →</a>
+    <a class="home-cta-secondary" href="/about/">About Emmanuel</a>
+  </div>
+
+  <div class="home-divider"></div>
+  <div class="home-section-label">Services</div>
+  <div class="home-services">
+    <div class="home-service">
+      <div class="home-service-title">White Papers</div>
+      <div class="home-service-desc">In-depth technical research documents for institutional and professional audiences.</div>
+    </div>
+    <div class="home-service">
+      <div class="home-service-title">Market Intelligence Reports</div>
+      <div class="home-service-desc">Data-informed editorial covering macro trends, sector analysis, and emerging markets.</div>
+    </div>
+    <div class="home-service">
+      <div class="home-service-title">Editorial Strategy</div>
+      <div class="home-service-desc">Content architecture and publishing strategy for financial media and research platforms.</div>
+    </div>
+    <div class="home-service">
+      <div class="home-service-title">Technical Finance Writing</div>
+      <div class="home-service-desc">Translating complex quantitative and market concepts into authoritative editorial content.</div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="pill"><div class="pill-label">Specialty</div><div class="pill-text">Fintech and Personal Finance</div></div>
-    <div class="pill"><div class="pill-label">Fiction</div><div class="pill-text">Nigerian Literary and Young Adult</div></div>
-    <div class="pill"><div class="pill-label">Creative</div><div class="pill-text">Poetry and Substack Essays</div></div>
-  </div>
-</div>
 
-<div class="section">
-  <div class="section-header">
-    <div><div class="section-title">Featured Writing</div><div class="section-sub">Finance - Essays - Poetry</div></div>
-    <a class="section-link" href="/writing/">View all</a>
-  </div>
-  <div class="writing-grid">
-    <a class="writing-card featured" href="/writing/">
-      <div class="writing-cat">Finance</div>
-      <div class="writing-title">Why Nigerian Fintechs Are Rewriting the Rules of African Banking</div>
-      <div class="writing-meta">8 min read - Published in TechCabal</div>
-    </a>
-    <a class="writing-card" href="/writing/">
-      <div class="writing-cat">Personal Finance</div>
-      <div class="writing-title">The Quiet Cost of Keeping Your Money in a Savings Account</div>
-      <div class="writing-meta">5 min read</div>
-    </a>
-    <a class="writing-card" href="/writing/">
-      <div class="writing-cat">Poetry</div>
-      <div class="writing-title">Atlas of the Unnamed Streets</div>
-      <div class="writing-meta">3 min read</div>
-    </a>
-    <a class="writing-card" href="/writing/">
-      <div class="writing-cat">Investing</div>
-      <div class="writing-title">Dollar-Cost Averaging Explained for the Reluctant Investor</div>
-      <div class="writing-meta">6 min read</div>
-    </a>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-header">
-    <div><div class="section-title">Fiction</div><div class="section-sub">Nigerian literary and young adult novels</div></div>
-    <a class="section-link" href="/fiction/">View all</a>
-  </div>
-  <div class="fiction-grid">
-    {{ range first 3 (where .Site.RegularPages "Section" "fiction") }}
-    <a class="fiction-card" href="{{ .Permalink }}">
-      <div class="fiction-spine"></div>
-      <div class="fiction-body">
-        <div class="fiction-genre">{{ with .Params.tags }}{{ delimit . " - " }}{{ end }}</div>
-        <div class="fiction-title">{{ .Title }}</div>
-        <div class="fiction-desc">{{ .Description }}</div>
-        <div class="fiction-meta">
-          {{ with .Params.setting }}<span>{{ . }}</span>{{ end }}
-          {{ with .Params.storyline }}{{ . }}{{ end }}
-        </div>
+  <div class="home-divider"></div>
+  <div class="home-section-label">Recent writing</div>
+  <div class="home-work-grid">
+    {{ range first 3 (where .Site.RegularPages "Section" "writing") }}
+    <a class="home-card" href="{{ .Permalink }}">
+      <div class="home-card-spine" style="background:linear-gradient(90deg,#4a8cc9,#2d5fa0)"></div>
+      <div class="home-card-body">
+        <div class="home-card-cat" style="color:#4a8cc9">{{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}Finance{{ end }}</div>
+        <div class="home-card-title">{{ .Title }}</div>
+        <div class="home-card-desc">{{ .Description }}</div>
       </div>
     </a>
     {{ end }}
   </div>
-</div>
 
-<div class="section">
-  <div class="newsletter">
-    <div>
-      <div class="nl-eyebrow">Newsletter - Substack</div>
-      <div class="nl-title">Mindcrafted Universe</div>
-      <div class="nl-domain">mindcrafteduniverse.substack.com</div>
-      <div class="nl-sub">Where finance meets imagination. Weekly dispatches on money, markets, creativity, and the ideas shaping our world.</div>
-      <a class="nl-btn" href="https://mindcrafteduniverse.substack.com">Subscribe for free</a>
+  <div class="home-divider"></div>
+  <div class="home-contact">
+    <div class="home-contact-text">
+      <h3>Available for new engagements</h3>
+      <p>White papers, market intelligence reports, editorial strategy, and technical finance content.</p>
     </div>
-    <div class="nl-right">
-      <div class="nl-stat"><div class="nl-stat-num">Weekly</div><div class="nl-stat-label">Fresh ideas every Friday</div></div>
-      <div class="nl-stat"><div class="nl-stat-num">Free</div><div class="nl-stat-label">Always free to read</div></div>
-      <div class="nl-stat"><div class="nl-stat-num">Finance</div><div class="nl-stat-label">plus creativity plus culture</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-header"><div class="section-title">About and Hire</div></div>
-  <div class="about-grid">
-    <div>
-      <div class="about-text">
-        <p>I am Emmanuel Chukwu, a Nigerian writer who moves between financial clarity and literary fiction with equal precision. I write for fintech brands and investment platforms, and I write novels set deep in the landscapes of Nigeria.</p>
-        <p>Based in Nigeria, I bring an insider understanding of African financial markets alongside a global perspective on money, markets, and economic storytelling.</p>
-      </div>
-      <div class="skills">
-        <span class="skill-tag">Fintech Content</span>
-        <span class="skill-tag">Personal Finance</span>
-        <span class="skill-tag">Literary Fiction</span>
-        <span class="skill-tag">SEO Articles</span>
-        <span class="skill-tag">African Markets</span>
-        <span class="skill-tag">Poetry</span>
-        <span class="skill-tag">Newsletters</span>
-      </div>
-    </div>
-    <div class="contact-box">
-      <div class="contact-title">Let us work together</div>
-      <div class="contact-sub">Available for financial articles, blog posts, white papers, and long-form content. Response within 24 hours.</div>
-      <a class="contact-btn" href="mailto:xaitopia@gmail.com">Get in touch</a>
-    </div>
+    <a class="home-cta-primary" href="mailto:xaitopia@gmail.com">Get in touch →</a>
   </div>
 </div>
 {{ end }}
