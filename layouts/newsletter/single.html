@@ -1,0 +1,104 @@
+{{ define "main" }}
+<style>
+.nl-wrap{max-width:720px;margin:0 auto;padding:40px 0 80px}
+.nl-spine{height:4px;width:60px;border-radius:2px;background:linear-gradient(90deg,#4a8cc9,#2d5fa0);margin-bottom:32px}
+.nl-tag{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:#4a8cc9;margin-bottom:14px}
+.nl-title{font-family:'Playfair Display',serif;font-size:38px;line-height:1.2;color:#e8e4dc;font-weight:400;margin-bottom:14px}
+.nl-subtitle{font-size:16px;color:rgba(232,228,220,0.5);line-height:1.75;margin-bottom:48px;font-style:italic;max-width:560px}
+.nl-form-wrap{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:32px;margin-bottom:52px}
+.nl-form-label{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:rgba(232,228,220,0.3);margin-bottom:10px}
+.nl-form-title{font-family:'Playfair Display',serif;font-size:22px;color:#e8e4dc;margin-bottom:8px;font-weight:400}
+.nl-form-desc{font-size:13px;color:rgba(232,228,220,0.42);margin-bottom:24px;line-height:1.65}
+.nl-btn{display:inline-block;padding:11px 28px;background:rgba(74,140,201,0.12);border:0.5px solid rgba(74,140,201,0.35);border-radius:7px;color:#4a8cc9;font-size:13px;text-decoration:none;letter-spacing:0.05em;transition:border-color 0.2s}
+.nl-btn:hover{border-color:rgba(74,140,201,0.6)}
+.divider{height:0.5px;background:rgba(255,255,255,0.07);margin:0 0 32px}
+.section-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(232,228,220,0.3);margin-bottom:20px}
+.nl-issue{border:0.5px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;margin-bottom:14px;display:flex;text-decoration:none;transition:border-color 0.2s}
+.nl-issue:hover{border-color:rgba(255,255,255,0.14)}
+.nl-issue-spine{width:5px;flex-shrink:0}
+.nl-issue-body{padding:20px 24px;flex:1}
+.nl-issue-meta{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(74,140,201,0.6);margin-bottom:8px}
+.nl-issue-title{font-family:'Playfair Display',serif;font-size:18px;color:#e8e4dc;margin-bottom:8px;font-weight:400;line-height:1.35}
+.nl-issue-desc{font-size:13px;color:rgba(232,228,220,0.45);line-height:1.65}
+.nl-arrow{font-size:11px;color:rgba(74,140,201,0.5);margin-top:14px;display:block;letter-spacing:0.06em;text-transform:uppercase}
+.nl-loading{font-size:13px;color:rgba(232,228,220,0.3);font-style:italic;padding:20px 0}
+.nl-error{font-size:13px;color:rgba(232,228,220,0.3);font-style:italic;padding:10px 0}
+.nl-footer{display:flex;align-items:center;gap:14px;padding:20px 24px;border:0.5px solid rgba(255,255,255,0.07);border-radius:10px;margin-top:32px;text-decoration:none;transition:border-color 0.2s}
+.nl-footer:hover{border-color:rgba(255,255,255,0.14)}
+.nl-footer-icon{width:38px;height:38px;border-radius:7px;background:rgba(255,110,60,0.1);border:0.5px solid rgba(255,110,60,0.18);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;color:rgba(255,130,80,0.7);font-weight:500}
+.nl-footer-text{font-size:13px;color:rgba(232,228,220,0.45);line-height:1.5}
+.nl-footer-link{font-size:11px;color:rgba(255,130,80,0.6);letter-spacing:0.04em;margin-top:2px}
+</style>
+
+<div class="nl-wrap">
+  <div class="nl-spine"></div>
+  <div class="nl-tag">Newsletter</div>
+  <h1 class="nl-title">Mind Craft Universe</h1>
+  <p class="nl-subtitle">Essays on how to think, build, and live well — sent when something is worth saying. No filler, no schedule pressure.</p>
+
+  <div class="nl-form-wrap">
+    <div class="nl-form-label">Subscribe</div>
+    <div class="nl-form-title">Join the readers</div>
+    <div class="nl-form-desc">New essays on finance, culture, and the examined life. Free, always.</div>
+    <a class="nl-btn" href="https://mindcrafteduniverse.substack.com/subscribe" target="_blank">Subscribe on Substack →</a>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Recent issues</div>
+
+  <div id="nl-posts"><div class="nl-loading">Loading recent posts...</div></div>
+
+  <a class="nl-footer" href="https://mindcrafteduniverse.substack.com" target="_blank">
+    <div class="nl-footer-icon">S</div>
+    <div>
+      <div class="nl-footer-text">All issues live on Substack — read, share, and subscribe there too.</div>
+      <div class="nl-footer-link">mindcrafteduniverse.substack.com</div>
+    </div>
+  </a>
+</div>
+
+<script>
+const spines = [
+  "linear-gradient(180deg,#4a8cc9,#2d5fa0)",
+  "linear-gradient(180deg,#4a9c7c,#2d7a5a)",
+  "linear-gradient(180deg,#9c7c4a,#7a5a2d)"
+];
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  const text = tmp.textContent || tmp.innerText || '';
+  return text.replace(/\s+/g, ' ').trim().slice(0, 160) + (text.length > 160 ? '...' : '');
+}
+
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://mindcrafteduniverse.substack.com/feed&count=3')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('nl-posts');
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<div class="nl-error">No posts found. Visit Substack to read the latest.</div>';
+      return;
+    }
+    container.innerHTML = data.items.map((item, i) => `
+      <a class="nl-issue" href="${item.link}" target="_blank">
+        <div class="nl-issue-spine" style="background:${spines[i % 3]}"></div>
+        <div class="nl-issue-body">
+          <div class="nl-issue-meta">${formatDate(item.pubDate)}</div>
+          <div class="nl-issue-title">${item.title}</div>
+          <div class="nl-issue-desc">${stripHtml(item.description)}</div>
+          <span class="nl-arrow">Read on Substack →</span>
+        </div>
+      </a>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('nl-posts').innerHTML =
+      '<div class="nl-error">Could not load recent posts. <a href="https://mindcrafteduniverse.substack.com" target="_blank" style="color:rgba(74,140,201,0.6)">Visit Substack</a> to read the latest.</div>';
+  });
+</script>
+{{ end }}
