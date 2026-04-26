@@ -1,8 +1,11 @@
 <header class="header">
 <nav class="nav">
   <a class="brand" href="{{ "" | absLangURL }}">
-    <span class="brand-main">Xaitopia Research</span>
-    <span class="brand-sub">Emmanuel Chukwu</span>
+    <img class="brand-mark" src="/logo.png" alt="Xaitopia Research logo">
+    <div class="brand-text">
+      <span class="brand-main">Xaitopia Research</span>
+      <span class="brand-sub">Emmanuel Chukwu</span>
+    </div>
   </a>
   <div class="nav-links">
     {{- range site.Menus.main }}
@@ -31,7 +34,9 @@
 <style>
 .header{padding:14px 40px;border-bottom:0.5px solid rgba(255,255,255,0.07);position:sticky;top:0;z-index:100;background:#111}
 .nav{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto}
-.brand{text-decoration:none;display:flex;flex-direction:column;gap:1px}
+.brand{text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand-mark{width:38px;height:38px;object-fit:contain;flex-shrink:0;display:block}
+.brand-text{display:flex;flex-direction:column;gap:1px}
 .brand-main{font-size:15px;font-weight:500;color:#e8e4dc;letter-spacing:0.01em;line-height:1.2}
 .brand-sub{font-size:10px;color:rgba(232,228,220,0.3);letter-spacing:0.02em}
 .nav-links{display:flex;align-items:center;gap:4px}
@@ -48,6 +53,7 @@
 .nav-dd-item:hover{background:rgba(255,255,255,0.05);color:#e8e4dc}
 @media(max-width:600px){
   .header{padding:12px 20px}
+  .brand-sub{display:none}
   .nav-links a,.nav-dd-btn{font-size:12px;padding:5px 7px}
 }
 </style>
