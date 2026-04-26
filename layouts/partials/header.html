@@ -20,7 +20,7 @@
       {{- else }}
       <a href="{{ .URL }}"
         {{- if (findRE `^/` .URL) }}
-        {{- if eq .URL $.URL }} aria-current="page"{{end}}
+        {{- if eq .URL $.Page.RelPermalink }} aria-current="page"{{end}}
         {{- end }}>{{ .Name }}</a>
       {{- end }}
     {{- end }}
